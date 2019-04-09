@@ -74,7 +74,7 @@ def writeData(datalist, subID):
     datalist.insert(0, header) #add a header to the csvfile
     with open( 'Data/Sub{}.csv'.format(subID), 'a+') as f:
         writer = csv.writer(f) # write each entry of datalist to a single row
-        writer.writerows(f)
+        writer.writerows(datalist)
     f.close()
 
 
