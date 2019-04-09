@@ -65,6 +65,7 @@ def draw_fixation():
 def fill_background():
     SCREEN.fill(BG_COLOR)
 
+
 #write the data into csv file
 def writeData(datalist, subID):
     """
@@ -99,8 +100,9 @@ def experiment(subID):
                 RT = 0 # should be assigned value based on elapsed time from when stimulus is shown
                 countdown = 2
                 draw_fixation()
+                pygame.time.wait(500)
                 pygame.display.flip()
-                pygame.time.wait(500) # Display fixation cross for 500 milliseconds
+                #pygame.time.wait(500) # Display fixation cross for 500 milliseconds
                 #clear event buffer so they are not misunderstood as responses
                 pygame.event.clear(pygame.KEYDOWN)
                 #show stimulus and get RT and response
@@ -125,8 +127,8 @@ def experiment(subID):
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_SPACE:
                                 # Time elapsed from stimulus to button press
-                                RT =  # TO DO
-                                response = #TO DO
+                                RT = pygame.time.get_ticks()-start
+                                response = 1
 
                 fill_background()# clear the screen
                 pygame.display.flip()
