@@ -49,13 +49,9 @@ BG_COLOR = (123,123,123)
 #Set fontsize of the text
 FONTSIZE = 60
 # Set number of trials in the experiment
-# How should you name the variable?
-# TODO
-
+NUMTRIAL=100
 # Set number of nogo trials in the experiment
-# How should you name the variable?
-# TODO
-
+PCT_NOGO=0.2
 # Set the time interval in seconds of the delay
 # from end of trial n and beginning of trial n+1
 TRIALINTERVAL = 1
@@ -67,7 +63,11 @@ TRIALINTERVAL = 500
 #Frames per second of the experiment
 FPS = 60
 
-# Create a directory called 'Data' in your working-directory
-# where the experiment data for each subject is saved
-# before creating it check if the directory 'Data' already exists
-# TODO
+
+directory = "./Data"  # name of directory to save subject data
+try:
+    # Create the Directory
+    os.mkdir(directory)
+    #if it already exists, function os.mkdir throws an error
+except FileExistsError:
+    print("Directory " + str( directory)+  " already exists")
