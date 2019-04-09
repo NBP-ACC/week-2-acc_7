@@ -48,8 +48,11 @@ BG_COLOR = (123,123,123)
 
 #Set fontsize of the text
 FONTSIZE = 60
+
 # Set number of trials in the experiment
 NUMTRIAL=100
+
+
 # Set number of nogo trials in the experiment
 PCT_NOGO=0.2
 # Set the time interval in seconds of the delay
@@ -64,7 +67,10 @@ TRIALINTERVAL = 500
 FPS = 60
 
 
-directory = "./Data"  # name of directory to save subject data
+#Create a folder where all the subject data will be saved
+
+
+directory = "./Data"  # name of directory
 try:
     # Create the Directory
     os.mkdir(directory)
